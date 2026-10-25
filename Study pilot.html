@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyPilot — Every Day Closer to Success</title>
+<meta name="theme-color" content="#4668f5">
+<meta name="description" content="StudyPilot helps students plan study sessions, track assignments, practise, and build consistent learning habits. Free interactive prototype.">
+<style>
+:root{--ink:#17233b;--muted:#6b7890;--blue:#4668f5;--blue2:#6f86ff;--mint:#dff8ee;--bg:#f5f7fc;--card:#fff;--line:#e7ebf4;--orange:#ffb45b;--pink:#ffe7e9;--shadow:0 12px 34px rgba(35,54,100,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}.app{display:flex;min-height:100vh}.sidebar{width:248px;background:#fff;border-right:1px solid var(--line);padding:25px 17px;display:flex;flex-direction:column;gap:24px;position:sticky;top:0;height:100vh}.brand{display:flex;align-items:center;gap:10px;font-weight:850;font-size:20px;letter-spacing:-.6px;padding:0 9px}.brandmark{height:36px;width:36px;background:linear-gradient(135deg,#4668f5,#8a6cf7);color:white;border-radius:12px;display:grid;place-items:center;font-size:20px;box-shadow:0 7px 16px #4668f544}.brand small{display:block;font-size:10px;letter-spacing:1.7px;color:var(--muted);font-weight:800;margin-top:1px}.navlabel{font-size:10px;letter-spacing:1.5px;color:#9aa4b7;font-weight:800;padding:0 12px;margin-bottom:-12px}.nav{display:grid;gap:5px}.nav button{background:transparent;color:#68758e;text-align:left;border-radius:12px;padding:12px 13px;display:flex;gap:12px;align-items:center;font-weight:650;font-size:13px}.nav button.active,.nav button:hover{background:#edf1ff;color:var(--blue)}.nav .ico{width:19px;text-align:center;font-size:17px}.side-bottom{margin-top:auto}.streak{background:linear-gradient(145deg,#202c4c,#344775);color:white;border-radius:17px;padding:17px}.streak strong{font-size:15px}.streak p{font-size:12px;line-height:1.5;color:#d4dcf1;margin:8px 0 12px}.streak .bar{height:5px;background:#ffffff2e;border-radius:9px;overflow:hidden}.streak .bar span{display:block;width:62%;height:100%;background:#79e2b4;border-radius:9px}.profile{display:flex;align-items:center;gap:10px;padding:10px 8px 0}.avatar{width:35px;height:35px;background:#ffe5c8;color:#9d5723;border-radius:50%;display:grid;place-items:center;font-weight:800}.profile strong{display:block;font-size:12px}.profile small{color:var(--muted);font-size:11px}.main{flex:1;min-width:0;padding:28px clamp(18px,3vw,42px) 45px;max-width:1600px;margin:auto}.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:27px}.eyebrow{font-size:11px;color:var(--muted);font-weight:800;letter-spacing:1.4px;text-transform:uppercase}.topbar h1{font-size:clamp(23px,3vw,32px);letter-spacing:-1.2px;margin:5px 0 0}.topright{display:flex;gap:10px;align-items:center}.datepill,.iconbtn{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 13px;color:#5d6a82;font-size:12px;font-weight:700}.iconbtn{font-size:17px;padding:8px 11px}.hero{background:linear-gradient(115deg,#4b68f6 0%,#6878f5 53%,#8972f2 100%);border-radius:24px;padding:27px 29px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:25px;box-shadow:0 18px 40px #5c6cf52a;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:250px;height:250px;border:1px solid #ffffff24;border-radius:50%;right:10%;top:-120px;box-shadow:0 0 0 30px #ffffff0b,0 0 0 60px #ffffff08}.hero-copy{position:relative;z-index:1;max-width:560px}.hero-tag{display:inline-flex;background:#ffffff22;border:1px solid #ffffff30;border-radius:20px;padding:6px 10px;font-size:10px;font-weight:800;letter-spacing:1px}.hero h2{font-size:clamp(22px,3vw,31px);line-height:1.15;letter-spacing:-1px;margin:15px 0 10px}.hero p{font-size:13px;color:#e8ebff;line-height:1.6;margin:0 0 18px;max-width:460px}.primary-light{background:#fff;color:#465ef0;border-radius:11px;padding:11px 15px;font-weight:800;font-size:12px}.hero-art{position:relative;z-index:1;min-width:135px;width:155px;height:145px;border-radius:27px;background:#ffffff1c;border:1px solid #ffffff40;display:grid;place-items:center;font-size:75px;transform:rotate(3deg)}.hero-art:after{content:"✦";position:absolute;right:12px;top:8px;font-size:22px;color:#ffe5a5}.grid{display:grid;gap:17px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin:20px 0}.stat,.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.stat{padding:17px 18px}.stat-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:11px;font-weight:750}.stat-icon{width:33px;height:33px;border-radius:11px;display:grid;place-items:center;font-size:16px;background:#edf1ff}.stat-value{font-size:27px;font-weight:850;letter-spacing:-1px;margin:13px 0 4px}.stat-foot{font-size:11px;color:var(--muted)}.good{color:#1ba477;font-weight:800}.dashboard-grid{grid-template-columns:minmax(0,1.5fr) minmax(270px,1fr);align-items:start}.panel{padding:21px}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.panel h3{margin:0;font-size:16px;letter-spacing:-.3px}.panel-sub{font-size:11px;color:var(--muted);margin-top:5px}.textbtn{background:transparent;color:var(--blue);font-size:11px;font-weight:800}.tasklist{display:grid;gap:10px}.task{display:flex;align-items:center;gap:12px;border:1px solid var(--line);padding:12px;border-radius:13px}.check{height:23px;width:23px;flex:0 0 23px;border:1.5px solid #cbd3e4;border-radius:7px;background:white;color:white;display:grid;place-items:center}.task.done .check{background:#2fbd8b;border-color:#2fbd8b}.task.done .task-title{text-decoration:line-through;color:#9aa4b7}.task-content{flex:1;min-width:0}.task-title{font-size:12px;font-weight:800}.task-meta{font-size:10px;color:var(--muted);margin-top:4px}.tag{font-size:9px;font-weight:850;padding:6px 8px;border-radius:7px;white-space:nowrap;background:#edf1ff;color:#5368dc}.tag.green{background:#e0f8ed;color:#21976f}.tag.orange{background:#fff0dc;color:#bd7b23}.schedule{display:grid;gap:0}.slot{display:grid;grid-template-columns:62px 10px 1fr;gap:10px;min-height:61px}.slot-time{font-size:10px;color:var(--muted);padding-top:4px}.slot-line{position:relative;display:flex;justify-content:center}.slot-line:before{content:"";position:absolute;top:5px;bottom:-5px;width:1px;background:#e2e7f1}.slot:last-child .slot-line:before{display:none}.dot{width:9px;height:9px;background:#6277f5;border:2px solid #fff;box-shadow:0 0 0 1px #6277f5;border-radius:50%;position:relative;z-index:1}.slot-body{padding-bottom:15px}.slot-body strong{font-size:11px;display:block}.slot-body small{font-size:10px;color:var(--muted);display:block;margin-top:4px}.subjectbar{display:flex;gap:4px;margin-top:9px}.subjectbar span{height:5px;border-radius:6px;background:#6178f5;flex:1}.subjectbar span:nth-child(2){background:#a6b1ff}.subjectbar span:nth-child(3){background:#d7dcff}.bottom-grid{grid-template-columns:1fr 1fr;margin-top:17px}.focusbox{background:#f4f6ff;border-radius:14px;padding:15px}.focusbox strong{font-size:12px}.focusbox p{font-size:11px;line-height:1.6;color:var(--muted);margin:7px 0 0}.progress{height:7px;background:#e8ebf5;border-radius:8px;overflow:hidden;margin-top:12px}.progress span{display:block;height:100%;width:68%;background:linear-gradient(90deg,#536cf5,#8d7af6);border-radius:8px}.screen{display:none}.screen.active{display:block}.section-title{margin:0 0 7px;font-size:25px;letter-spacing:-.8px}.section-desc{margin:0 0 22px;color:var(--muted);font-size:13px;line-height:1.6}.formrow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-bottom:13px}.field label{display:block;font-size:11px;font-weight:800;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;border:1px solid #dfe4ef;background:#fff;border-radius:11px;padding:12px;color:var(--ink);outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:#7a8aff;box-shadow:0 0 0 3px #6178f51c}.btn{background:var(--blue);color:#fff;padding:12px 16px;border-radius:11px;font-size:12px;font-weight:850}.btn.secondary{background:#edf1ff;color:var(--blue)}.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}.actionrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.emptyhint{background:#f8f9fd;border:1px dashed #d9deeb;border-radius:13px;padding:17px;color:var(--muted);font-size:12px;line-height:1.6}.quiz-q{font-weight:800;font-size:14px;line-height:1.6;margin-bottom:15px}.answers{display:grid;gap:9px}.answer{border:1px solid var(--line);background:#fff;text-align:left;border-radius:11px;padding:12px;font-size:12px;color:var(--ink)}.answer:hover{border-color:#8795ff}.answer.correct{border-color:#36bd8d;background:#e9fbf4}.answer.wrong{border-color:#f18b94;background:#fff0f1}.feedback{font-size:12px;line-height:1.6;margin-top:13px}.chatbox{height:340px;overflow:auto;border:1px solid var(--line);border-radius:14px;padding:14px;background:#fbfcff;display:flex;flex-direction:column;gap:11px;margin-bottom:12px}.bubble{max-width:86%;padding:11px 13px;border-radius:13px;font-size:12px;line-height:1.6}.bubble.ai{background:#edf1ff;align-self:flex-start;border-bottom-left-radius:4px}.bubble.user{background:#4f68f4;color:white;align-self:flex-end;border-bottom-right-radius:4px}.chatinput{display:flex;gap:9px}.chatinput input{flex:1;min-width:0;border:1px solid var(--line);border-radius:11px;padding:12px}.reportbar{display:flex;align-items:center;gap:10px;margin:13px 0}.reportbar label{width:115px;font-size:11px;color:var(--muted)}.reportbar .progress{flex:1;margin:0}.reportbar strong{font-size:11px;width:35px;text-align:right}.notice{background:#fff7e8;border:1px solid #ffe5b5;padding:13px 15px;border-radius:12px;font-size:11px;color:#8c6326;line-height:1.6;margin-top:15px}.toast{position:fixed;bottom:20px;right:20px;background:#202c4c;color:#fff;border-radius:12px;padding:12px 16px;font-size:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.2s;pointer-events:none;z-index:10}.toast.show{opacity:1;transform:translateY(0)}.mobile-menu{display:none}
+@media(max-width:1000px){.sidebar{width:215px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-grid{grid-template-columns:1fr}.hero-art{width:120px;height:120px;font-size:60px}}
+@media(max-width:700px){.app{display:block}.sidebar{position:fixed;z-index:20;left:-260px;top:0;transition:left .22s;width:250px;box-shadow:var(--shadow)}.sidebar.open{left:0}.main{padding:19px 14px 35px}.mobile-menu{display:inline-block}.topbar{align-items:flex-start}.datepill{display:none}.hero{padding:22px;border-radius:19px}.hero-art{display:none}.stats{gap:10px;margin:14px 0}.stat{padding:14px}.stat-value{font-size:24px}.panel{padding:16px}.bottom-grid{grid-template-columns:1fr}.formrow{grid-template-columns:1fr}.tag{display:none}}
+
+/* StudyPilot update: horizontal bottom navigation and free-access prototype */
+.sidebar{
+  position:fixed;left:0;right:0;bottom:0;top:auto;width:100%;height:auto;
+  min-height:76px;padding:8px 14px;background:rgba(255,255,255,.96);
+  border-right:0;border-top:1px solid var(--line);backdrop-filter:blur(14px);
+  z-index:30;display:flex;flex-direction:row;align-items:center;justify-content:center;
+  box-shadow:0 -8px 28px rgba(35,54,100,.07)
+}
+.sidebar .brand,.sidebar .navlabel,.sidebar .side-bottom{display:none}
+.nav{width:min(900px,100%);display:flex;align-items:stretch;justify-content:space-around;gap:5px}
+.nav button{
+  flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;
+  align-items:center;gap:4px;text-align:center;padding:7px 5px;border-radius:12px;
+  font-size:10px;line-height:1.15;white-space:normal
+}
+.nav .ico{width:auto;font-size:19px;line-height:1.1}
+#navCount{margin-left:0!important;position:absolute;transform:translate(23px,-10px)}
+.main{padding-bottom:112px}
+.mobile-menu{display:none!important}
+@media(max-width:700px){
+  .app{display:block}
+  .sidebar{left:0;right:0;top:auto;bottom:0;width:100%;height:auto;min-height:70px;padding:6px 4px calc(6px + env(safe-area-inset-bottom));transition:none}
+  .sidebar.open{left:0}
+  .nav{gap:2px}
+  .nav button{padding:7px 2px;font-size:9px;gap:4px;border-radius:10px}
+  .nav .ico{font-size:18px}
+  .main{padding:19px 14px calc(98px + env(safe-area-inset-bottom))}
+  .topbar{align-items:flex-start}
+  .datepill{display:none}
+  .hero{padding:22px;border-radius:19px}
+  .hero-art{display:none}
+  .stats{gap:10px;margin:14px 0}
+  .stat{padding:14px}
+  .stat-value{font-size:24px}
+  .panel{padding:16px}
+  .bottom-grid{grid-template-columns:1fr}
+  .formrow{grid-template-columns:1fr}
+  .tag{display:none}
+}
+@media(max-width:380px){
+  .nav button{font-size:8px}
+  .nav .ico{font-size:16px}
+}
+
+
+/* StudyPilot polished final prototype layer */
+:root{scroll-behavior:smooth}
+button,input,select,textarea{transition:background .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #9ba9ff;outline-offset:2px}
+.hero{isolation:isolate}
+.hero-copy p{max-width:510px}
+.stat,.panel{transition:transform .2s ease,box-shadow .2s ease}
+.stat:hover,.panel:hover{box-shadow:0 15px 36px rgba(35,54,100,.10)}
+.primary-light:hover,.btn:hover{transform:translateY(-1px)}
+.sidebar{position:fixed;left:0;right:0;bottom:0;top:auto;width:100%;height:auto;min-height:76px;padding:8px 14px;background:rgba(255,255,255,.96);border-right:0;border-top:1px solid var(--line);backdrop-filter:blur(14px);z-index:30;display:flex;flex-direction:row;align-items:center;justify-content:center;box-shadow:0 -8px 28px rgba(35,54,100,.07)}
+.sidebar .brand,.sidebar .navlabel,.sidebar .side-bottom{display:none}
+.nav{width:min(900px,100%);display:flex;align-items:stretch;justify-content:space-around;gap:5px}
+.nav button{position:relative;flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;text-align:center;padding:7px 5px;border-radius:12px;font-size:10px;line-height:1.15;white-space:normal}
+.nav .ico{width:auto;font-size:19px;line-height:1.1}
+#navCount{margin-left:0!important;position:absolute;transform:translate(25px,-11px);padding:2px 5px!important}
+.main{padding-bottom:112px}
+.modal-backdrop[hidden]{display:none}
+.modal-backdrop{position:fixed;inset:0;background:rgba(18,28,55,.48);backdrop-filter:blur(5px);z-index:80;display:grid;place-items:center;padding:18px}
+.focus-modal{position:relative;width:min(460px,100%);background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:0 25px 90px #15254c33}
+.focus-modal h2{font-size:26px;letter-spacing:-.8px;margin:8px 0}
+.modal-close{position:absolute;right:16px;top:13px;background:transparent;color:var(--muted);font-size:27px;padding:2px 8px;border-radius:8px}
+.timer-display{font-size:clamp(56px,14vw,78px);letter-spacing:-3px;font-weight:850;text-align:center;margin:18px 0 15px;font-variant-numeric:tabular-nums}
+.timer-presets{display:flex;gap:8px;justify-content:center;margin-bottom:20px}
+.preset{border:1px solid var(--line);background:var(--bg);color:var(--muted);padding:8px 15px;border-radius:20px;font-size:12px;font-weight:800}
+.preset.active{background:#edf1ff;color:var(--blue);border-color:#cbd4ff}
+.timer-task-field{margin-bottom:12px}
+.timer-actions{justify-content:center}
+.timer-actions .btn{min-width:125px}
+.timer-note{text-align:center;color:var(--muted);font-size:11px;line-height:1.5;margin:17px 0 0}
+body.dark{--ink:#edf1ff;--muted:#a5b0ca;--bg:#101729;--card:#182239;--line:#2a3753;--shadow:0 12px 34px rgba(0,0,0,.16);background:var(--bg);color:var(--ink)}
+body.dark .sidebar{background:rgba(22,32,52,.96)}
+body.dark .nav button{color:#a5b0ca}
+body.dark .nav button.active,body.dark .nav button:hover{background:#26345b;color:#b9c5ff}
+body.dark .datepill,body.dark .iconbtn,body.dark .task,body.dark .answer,body.dark .field input,body.dark .field select,body.dark .field textarea,body.dark .chatinput input{background:#182239;color:var(--ink);border-color:var(--line)}
+body.dark .focusbox,body.dark .emptyhint{background:#202d47;color:var(--ink);border-color:var(--line)}
+body.dark .chatbox{background:#131d31;border-color:var(--line)}
+body.dark .bubble.ai{background:#26345b;color:#edf1ff}
+body.dark .answer.correct{background:#173d36}body.dark .answer.wrong{background:#462630}
+body.dark .notice{background:#382f20;border-color:#5c4829;color:#f2d49a}
+body.dark .streak{background:linear-gradient(145deg,#202c4c,#344775)}
+body.dark .timer-modal,body.dark .focus-modal{background:var(--card);color:var(--ink)}
+body.dark .preset{background:#202d47;color:var(--muted);border-color:var(--line)}
+body.dark .preset.active{background:#26345b;color:#c2ccff}
+@media(max-width:700px){
+  .app{display:block}
+  .sidebar{left:0;right:0;top:auto;bottom:0;width:100%;height:auto;min-height:70px;padding:6px 4px calc(6px + env(safe-area-inset-bottom));transition:none}
+  .sidebar.open{left:0}
+  .nav{gap:2px}
+  .nav button{padding:7px 2px;font-size:9px;gap:4px;border-radius:10px}
+  .nav .ico{font-size:18px}
+  .main{padding:19px 14px calc(98px + env(safe-area-inset-bottom))}
+  .topbar{align-items:flex-start}
+  .datepill{display:none}
+  .hero{padding:22px;border-radius:19px}
+  .hero-art{display:none}
+  .stats{gap:10px;margin:14px 0;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat{padding:14px}
+  .stat-value{font-size:24px}
+  .panel{padding:16px}
+  .bottom-grid{grid-template-columns:1fr}
+  .formrow{grid-template-columns:1fr}
+  .tag{display:none}
+  .focus-modal{padding:24px 20px}
+}
+@media(max-width:380px){.nav button{font-size:8px}.nav .ico{font-size:16px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="brandmark">✦</div><div>StudyPilot<small>FREE STUDY COMPANION</small></div></div>
+  <div class="navlabel">YOUR WORKSPACE</div>
+  <nav class="nav" id="nav">
+    <button class="active" data-screen="dashboard"><span class="ico">⌂</span>Dashboard</button>
+    <button data-screen="planner"><span class="ico">▦</span>Smart planner</button>
+    <button data-screen="assignments"><span class="ico">☑</span>Assignments <span id="navCount" style="margin-left:auto;background:#ffe7e9;color:#c94c5a;border-radius:8px;padding:3px 6px;font-size:10px">2</span></button>
+    <button data-screen="quiz"><span class="ico">✎</span>Quiz & practice</button>
+    <button data-screen="tutor"><span class="ico">✧</span>AI tutor</button>
+    <button data-screen="reports"><span class="ico">▥</span>Progress reports</button>
+  </nav>
+  <div class="side-bottom">
+    <div class="streak"><strong>🔥 Build your streak</strong><p>Small, focused sessions add up. Show up for your future self today.</p><div class="bar"><span></span></div></div>
+    <div class="profile"><div class="avatar">S</div><div><strong id="profileName">Student</strong><small id="profileGoal">Class 9 · School success</small></div></div>
+  </div>
+</aside>
+<main class="main">
+  <header class="topbar"><div style="display:flex;gap:12px;align-items:flex-start"><button class="iconbtn mobile-menu" id="menuBtn">☰</button><div><div class="eyebrow" id="eyebrow">SUNDAY, OCTOBER 25</div><h1 id="pageTitle">Your learning, in motion. ✨</h1></div></div><div class="topright"><div class="datepill" id="todayPill">📅 Sunday, 25 Oct</div><button class="iconbtn" title="Focus timer" id="focusBtn" aria-label="Open focus timer">⏱</button><button class="iconbtn" title="Toggle dark mode" id="themeBtn" aria-label="Toggle dark mode">☾</button></div></header>
+  <section class="screen active" id="screen-dashboard">
+    <div class="hero"><div class="hero-copy"><span class="hero-tag">✦ EVERY DAY CLOSER TO SUCCESS · FREE</span><h2>Big goals. Small steps.<br>One brilliant day at a time.</h2><p>Your plan adapts to you. Learn a concept, practise it, track your progress, and build confidence for the exams that matter.</p><button class="primary-light" data-go="planner">Build my study plan&nbsp; →</button></div><div class="hero-art">🎓</div></div>
+    <div class="grid stats">
+      <div class="stat"><div class="stat-top">Study time <span class="stat-icon">◷</span></div><div class="stat-value" id="studyTime">1h 20m</div><div class="stat-foot"><span class="good">↑ Keep going</span> · today</div></div>
+      <div class="stat"><div class="stat-top">Tasks completed <span class="stat-icon" style="background:#e1f8ee">✓</span></div><div class="stat-value" id="taskStat">2/5</div><div class="stat-foot">Your daily progress</div></div>
+      <div class="stat"><div class="stat-top">Quiz accuracy <span class="stat-icon" style="background:#fff0dc">◎</span></div><div class="stat-value" id="accuracyStat">80%</div><div class="stat-foot">Across practice attempts</div></div>
+      <div class="stat"><div class="stat-top">Learning streak <span class="stat-icon" style="background:#ffe7e9">🔥</span></div><div class="stat-value">4 days</div><div class="stat-foot">Consistency beats cramming</div></div>
+    </div>
+    <div class="grid dashboard-grid">
+      <div class="panel"><div class="panel-head"><div><h3>Today's assignments</h3><div class="panel-sub">A clear next step makes starting easier.</div></div><button class="textbtn" data-go="assignments">View all →</button></div><div class="tasklist" id="dashTasks"></div></div>
+      <div class="panel"><div class="panel-head"><div><h3>Your study timeline</h3><div class="panel-sub">A balanced plan for today</div></div><button class="textbtn" data-go="planner">Edit plan</button></div><div class="schedule" id="dashSchedule"></div></div>
+    </div>
+    <div class="grid bottom-grid">
+      <div class="panel"><div class="panel-head"><div><h3>Weekly learning snapshot</h3><div class="panel-sub">Progress over perfection</div></div><span class="tag green">On your way</span></div><div class="focusbox"><strong>🎯 Focus for this week</strong><p id="focusText">Strengthen concepts in Science and practise a little Maths every day.</p><div class="progress"><span></span></div><div style="display:flex;justify-content:space-between;margin-top:7px;font-size:10px;color:var(--muted)"><span>Weekly goal</span><b>68%</b></div></div></div>
+      <div class="panel"><div class="panel-head"><div><h3>A note for you</h3><div class="panel-sub">Your reminder for today</div></div><span style="font-size:23px">🌱</span></div><p style="font-size:13px;line-height:1.8;color:#56637b;margin:0">You don't need to feel motivated every minute. Just begin with <b>one focused 20-minute session</b>. Your future self will thank you.</p><button class="textbtn" style="padding:12px 0 0" data-go="tutor">Need help getting started? →</button></div>
+    </div>
+  </section>
+  <section class="screen" id="screen-planner">
+    <h2 class="section-title">Your smart study planner 📅</h2><p class="section-desc">Tell StudyPilot about your routine and exam dates. This prototype creates a practical starter plan you can adjust every day.</p>
+    <div class="grid dashboard-grid">
+      <div class="panel"><div class="panel-head"><div><h3>Personalise your plan</h3><div class="panel-sub">Your schedule should fit your real life.</div></div></div>
+        <div class="formrow"><div class="field"><label>Your name</label><input id="studentName" placeholder="e.g. Aarav"></div><div class="field"><label>Class / preparation level</label><select id="level"><option>Class 6–8</option><option selected>Class 9</option><option>Class 10</option><option>Class 11</option><option>Class 12</option><option>JEE preparation</option><option>NEET preparation</option><option>NSEJS / Olympiad</option><option>Other competitive exam</option></select></div></div>
+        <div class="formrow"><div class="field"><label>Exam name</label><input id="examName" placeholder="e.g. Science mid-term"></div><div class="field"><label>Exam date</label><input id="examDate" type="date"></div></div>
+        <div class="formrow"><div class="field"><label>Available study time per day</label><select id="hours"><option value="1">1 hour</option><option value="2" selected>2 hours</option><option value="3">3 hours</option><option value="4">4 hours</option><option value="5">5+ hours</option></select></div><div class="field"><label>School / coaching ends around</label><input id="schoolEnd" type="time" value="15:00"></div></div>
+        <div class="field"><label>Subjects and chapters to prepare</label><textarea id="subjects" rows="3" placeholder="e.g. Maths: Linear Equations; Science: Atoms; English: grammar"></textarea></div>
+        <div class="actionrow"><button class="btn" id="generatePlan">✨ Generate my plan</button><button class="btn ghost" id="saveProfile">Save preferences</button></div>
+        <div class="notice">Planning tip: add your full syllabus and realistic available hours. A good plan includes breaks, revision, practice, and catch-up time—not just more study hours.</div>
+      </div>
+      <div class="panel"><div class="panel-head"><div><h3>Your day, at a glance</h3><div class="panel-sub" id="planSummary">A balanced sample schedule</div></div></div><div class="schedule" id="plannerSchedule"></div><div class="focusbox"><strong>🧠 The StudyPilot method</strong><p>Learn → practise → check mistakes → revise later. The aim is lasting understanding, not just finishing pages.</p></div></div>
+    </div>
+  </section>
+  <section class="screen" id="screen-assignments">
+    <h2 class="section-title">Assignments & backlog tracker ☑</h2><p class="section-desc">Break work into manageable tasks. Mark tasks done as you complete them and use overdue items to plan a catch-up session.</p>
+    <div class="grid dashboard-grid"><div class="panel"><div class="panel-head"><div><h3>Your task list</h3><div class="panel-sub">Demo tasks are editable through the controls below.</div></div><span class="tag orange" id="pendingTag">3 pending</span></div><div class="tasklist" id="allTasks"></div>
+      <div class="actionrow"><button class="btn secondary" id="addTaskBtn">＋ Add assignment</button><button class="btn ghost" id="clearDone">Clear completed</button></div></div>
+      <div class="panel"><div class="panel-head"><div><h3>Add a task</h3><div class="panel-sub">School homework, revision, or practice.</div></div></div>
+        <div class="field" style="margin-bottom:13px"><label>Task name</label><input id="newTask" placeholder="e.g. Revise the periodic table"></div>
+        <div class="formrow"><div class="field"><label>Subject</label><select id="taskSubject"><option>Maths</option><option>Science</option><option>English</option><option>Social Science</option><option>Physics</option><option>Chemistry</option><option>Biology</option><option>Other</option></select></div><div class="field"><label>Time needed</label><select id="taskDuration"><option>15 min</option><option selected>30 min</option><option>45 min</option><option>1 hour</option><option>90 min</option></select></div></div>
+        <div class="field"><label>Due date</label><input type="date" id="taskDue"></div><div class="actionrow"><button class="btn" id="addTask">Add to my tasks</button></div>
+        <div class="notice">A missed task is a signal to adjust the plan—not a reason to feel guilty. This prototype does not send push notifications or alerts outside the website.</div>
+      </div></div>
+  </section>
+  <section class="screen" id="screen-quiz">
+    <h2 class="section-title">Quiz & practice zone ⚡</h2><p class="section-desc">Short checks help you find what you understand and what needs another explanation. This demo includes sample questions.</p>
+    <div class="grid dashboard-grid"><div class="panel"><div class="panel-head"><div><h3>Quick knowledge check</h3><div class="panel-sub" id="quizProgress">Question 1 of 5 · Class 9 Science</div></div><span class="tag">Practice</span></div><div id="quizArea"></div></div>
+    <div class="panel"><div class="panel-head"><div><h3>Practice strategy</h3></div></div><div class="focusbox"><strong>1. Try without notes</strong><p>Give each question an honest attempt before checking the answer.</p></div><div class="focusbox" style="margin-top:10px"><strong>2. Learn from mistakes</strong><p>Write down why an answer was wrong and revisit the concept.</p></div><div class="focusbox" style="margin-top:10px"><strong>3. Retest later</strong><p>Try a similar question tomorrow to check whether the idea has stuck.</p></div><div class="notice">Questions shown here are sample practice content, not an official exam paper or a complete syllabus.</div></div></div>
+  </section>
+  <section class="screen" id="screen-tutor">
+    <h2 class="section-title">Your learning companion ✧</h2><p class="section-desc">Ask a question, request a simpler explanation, or get help breaking homework into steps. This prototype uses a basic demo response engine; live AI needs a secure backend connection.</p>
+    <div class="grid dashboard-grid"><div class="panel"><div class="panel-head"><div><h3>Ask StudyPilot</h3><div class="panel-sub">Curiosity is always welcome.</div></div><span class="tag green">Demo tutor</span></div>
+      <div class="chatbox" id="chatbox"><div class="bubble ai">Hi! 👋 I'm your StudyPilot learning companion. What are you studying today? Try asking me to explain a concept, plan revision, or break a homework question into steps.</div></div>
+      <div class="chatinput"><input id="chatInput" placeholder="Ask a question or tell me what you're stuck on…"><button class="btn" id="sendChat">Send ↗</button></div>
+      <div class="actionrow"><button class="btn ghost prompt" data-prompt="Explain atoms and molecules in simple Class 9 language.">Explain a concept</button><button class="btn ghost prompt" data-prompt="Help me make a revision plan for my next exam.">Plan revision</button><button class="btn ghost prompt" data-prompt="I have a backlog and feel overwhelmed. Help me start.">Beat backlog</button></div>
+    </div><div class="panel"><div class="panel-head"><div><h3>How your tutor should teach</h3></div></div><div class="focusbox"><strong>🎯 Meet you at your level</strong><p>Start with what you know, explain clearly, and gradually increase the challenge.</p></div><div class="focusbox" style="margin-top:10px"><strong>🧩 Build real understanding</strong><p>Use examples, analogies, questions, and step-by-step reasoning.</p></div><div class="focusbox" style="margin-top:10px"><strong>🚀 Stretch your ability</strong><p>Move from school foundations to Olympiad and entrance-exam style practice when you're ready.</p></div><div class="notice">For the full product, AI answers should be connected to age-appropriate learning safeguards, verified syllabus content, and reliable source materials.</div></div></div>
+  </section>
+  <section class="screen" id="screen-reports">
+    <h2 class="section-title">Your progress report 📈</h2><p class="section-desc">A useful report should turn activity into clear next steps—not just show scores. Demo numbers below update as you complete tasks and attempt quizzes.</p>
+    <div class="grid stats"><div class="stat"><div class="stat-top">Tasks completed <span class="stat-icon">✓</span></div><div class="stat-value" id="reportTasks">2</div><div class="stat-foot">In your current task list</div></div><div class="stat"><div class="stat-top">Quiz attempts <span class="stat-icon">✎</span></div><div class="stat-value" id="reportAttempts">0</div><div class="stat-foot">In this session</div></div><div class="stat"><div class="stat-top">Correct answers <span class="stat-icon">◎</span></div><div class="stat-value" id="reportCorrect">0%</div><div class="stat-foot">Across attempted questions</div></div><div class="stat"><div class="stat-top">Pending tasks <span class="stat-icon">◷</span></div><div class="stat-value" id="reportPending">3</div><div class="stat-foot">To plan or complete</div></div></div>
+    <div class="grid dashboard-grid"><div class="panel"><div class="panel-head"><div><h3>Subject confidence</h3><div class="panel-sub">Starter estimate—replace with real assessment data.</div></div></div><div class="reportbar"><label>Maths</label><div class="progress"><span style="width:72%"></span></div><strong>72%</strong></div><div class="reportbar"><label>Science</label><div class="progress"><span style="width:58%;background:#f2b05f"></span></div><strong>58%</strong></div><div class="reportbar"><label>English</label><div class="progress"><span style="width:84%;background:#42bf93"></span></div><strong>84%</strong></div><div class="reportbar"><label>Social Science</label><div class="progress"><span style="width:65%;background:#a18af4"></span></div><strong>65%</strong></div></div>
+    <div class="panel"><div class="panel-head"><div><h3>Recommended next steps</h3></div></div><div class="tasklist"><div class="task"><div class="stat-icon">1</div><div class="task-content"><div class="task-title">Revisit your weakest concept</div><div class="task-meta">Study Science for 20 minutes, then solve 5 questions.</div></div></div><div class="task"><div class="stat-icon">2</div><div class="task-content"><div class="task-title">Use active recall</div><div class="task-meta">Close your notes and explain the idea in your own words.</div></div></div><div class="task"><div class="stat-icon">3</div><div class="task-content"><div class="task-title">Protect a catch-up slot</div><div class="task-meta">Keep 15–20 minutes free to recover missed work.</div></div></div></div></div></div>
+    <div class="notice">Prototype note: progress and example subject confidence are not a validated assessment of a real student. A production app should calculate reports from saved work, diagnostic tests, and learning history.</div>
+  </section>
+</main>
+</div>
+<div class="modal-backdrop" id="focusModal" role="dialog" aria-modal="true" aria-labelledby="focusTitle" hidden>
+  <div class="focus-modal">
+    <button class="modal-close" id="closeFocus" aria-label="Close focus timer">×</button>
+    <div class="eyebrow">FOCUS MODE</div>
+    <h2 id="focusTitle">One thing at a time.</h2>
+    <p class="section-desc">Choose a sprint, put distractions aside, and give your attention a clear target.</p>
+    <div class="timer-display" id="timerDisplay">25:00</div>
+    <div class="timer-presets" role="group" aria-label="Choose focus duration">
+      <button class="preset active" data-minutes="25">25 min</button>
+      <button class="preset" data-minutes="15">15 min</button>
+      <button class="preset" data-minutes="5">5 min</button>
+    </div>
+    <div class="field timer-task-field"><label for="focusTask">What are you focusing on?</label><input id="focusTask" placeholder="e.g. Solve 5 Maths questions"></div>
+    <div class="actionrow timer-actions"><button class="btn" id="timerStart">Start focus</button><button class="btn secondary" id="timerReset">Reset</button></div>
+    <p class="timer-note" id="timerNote">Tip: keep your goal small enough to start right now.</p>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const initialTasks=[
+{id:1,title:"Revise atoms and molecules",subject:"Science",duration:"30 min",due:"Today",done:false,tag:"Priority"},
+{id:2,title:"Solve 8 linear equation questions",subject:"Maths",duration:"25 min",due:"Today",done:false,tag:"Practice"},
+{id:3,title:"Read English chapter summary",subject:"English",duration:"20 min",due:"Today",done:true,tag:"Revision"},
+{id:4,title:"Review yesterday's mistakes",subject:"Science",duration:"15 min",due:"Today",done:true,tag:"Revision"},
+{id:5,title:"Make a 1-page mind map",subject:"Social Science",duration:"25 min",due:"Today",done:false,tag:"Study"}];
+let tasks=JSON.parse(localStorage.getItem("sp_tasks")||"null")||initialTasks;
+let quizIndex=0,quizAttempts=0,quizCorrect=0,answered=false;
+const questions=[
+{q:"Which subatomic particle has a negative electric charge?",opts:["Proton","Neutron","Electron","Nucleus"],ans:2,why:"Electrons carry a negative charge. Protons are positive and neutrons have no charge."},
+{q:"The atomic number of an element equals its number of…",opts:["Neutrons only","Protons","Protons + neutrons","Electron shells"],ans:1,why:"Atomic number is defined as the number of protons in the nucleus."},
+{q:"Which of these is a good habit for long-term learning?",opts:["Only rereading notes","Studying everything the night before","Retrieving answers from memory and revisiting later","Avoiding difficult questions"],ans:2,why:"Active recall and spaced revision help you check understanding and remember information over time."},
+{q:"If an atom is electrically neutral, the number of electrons is equal to the number of…",opts:["Protons","Neutrons","Shells","Isotopes"],ans:0,why:"In a neutral atom, positive and negative charges balance, so electrons equal protons."},
+{q:"What should you do after getting a practice question wrong?",opts:["Ignore it","Memorise only the option","Understand the mistake and retry a similar question","Stop studying the topic"],ans:2,why:"Analysing mistakes helps identify a gap in understanding; retrying checks whether it is fixed."}
+];
+const $=id=>document.getElementById(id);
+function save(){localStorage.setItem("sp_tasks",JSON.stringify(tasks))}
+function toast(msg){let t=$("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2400)}
+function pending(){return tasks.filter(t=>!t.done).length}
+function completed(){return tasks.filter(t=>t.done).length}
+function renderTasks(target,limit){let arr=limit?tasks.slice(0,limit):tasks;$(target).innerHTML=arr.map(t=>`<div class="task ${t.done?'done':''}"><button class="check" data-check="${t.id}" aria-label="Mark task complete">${t.done?'✓':''}</button><div class="task-content"><div class="task-title">${esc(t.title)}</div><div class="task-meta">${esc(t.subject)} · ${esc(t.duration)} · ${esc(t.due)}</div></div><span class="tag ${t.done?'green':t.tag==='Priority'?'orange':''}">${t.done?'Done':esc(t.tag||'To do')}</span></div>`).join("")||'<div class="emptyhint">No tasks here yet. Add one to get started.</div>'}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function renderStats(){let c=completed(),p=pending();$("taskStat").textContent=`${c}/${tasks.length}`;$("navCount").textContent=p;$("pendingTag").textContent=`${p} pending`;$("reportTasks").textContent=c;$("reportPending").textContent=p;$("accuracyStat").textContent=quizAttempts?Math.round(quizCorrect/quizAttempts*100)+"%":"80%";$("reportAttempts").textContent=quizAttempts;$("reportCorrect").textContent=quizAttempts?Math.round(quizCorrect/quizAttempts*100)+"%":"—"}
+function renderSchedule(target,custom=false){let slots=custom?window.customSlots||defaultSlots:defaultSlots;$(target).innerHTML=slots.map(s=>`<div class="slot"><div class="slot-time">${s.time}</div><div class="slot-line"><span class="dot"></span></div><div class="slot-body"><strong>${esc(s.title)}</strong><small>${esc(s.sub)}</small></div></div>`).join("")}
+const defaultSlots=[{time:"4:00 PM",title:"Science · Concept learning",sub:"Atoms and molecules · 30 min"},{time:"4:35 PM",title:"Short break",sub:"Stretch, drink water · 10 min"},{time:"4:45 PM",title:"Maths · Practice questions",sub:"Linear equations · 25 min"},{time:"5:15 PM",title:"English · Light revision",sub:"Chapter summary · 20 min"},{time:"5:40 PM",title:"Recall & plan tomorrow",sub:"Review mistakes · 10 min"}];
+function showScreen(name){document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));$("screen-"+name).classList.add("active");document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("active",b.dataset.screen===name));const titles={dashboard:"Your learning, in motion. ✨",planner:"Make time for what matters.",assignments:"Small tasks. Real progress.",quiz:"Practise. Learn. Level up.",tutor:"Curiosity starts here.",reports:"Progress you can act on."};$("pageTitle").textContent=titles[name];$("sidebar").classList.remove("open");window.scrollTo({top:0,behavior:"smooth"})}
+document.querySelectorAll("#nav button").forEach(b=>b.addEventListener("click",()=>showScreen(b.dataset.screen)));
+document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>showScreen(b.dataset.go)));
+$("menuBtn").addEventListener("click",()=>$("sidebar").classList.toggle("open"));
+
+document.addEventListener("click",e=>{let b=e.target.closest("[data-check]");if(b){let t=tasks.find(x=>x.id===Number(b.dataset.check));if(t){t.done=!t.done;save();renderAll();toast(t.done?"Nice work—task completed! 🎉":"Task moved back to your list.");}}});
+function renderAll(){renderTasks("dashTasks",4);renderTasks("allTasks");renderStats();renderSchedule("dashSchedule");renderSchedule("plannerSchedule",true)}
+$("addTask").addEventListener("click",()=>{let title=$("newTask").value.trim();if(!title){toast("Please enter a task name first.");$("newTask").focus();return}let due=$("taskDue").value||"Today";tasks.unshift({id:Date.now(),title,subject:$("taskSubject").value,duration:$("taskDuration").value,due,done:false,tag:"To do"});save();$("newTask").value="";renderAll();toast("Assignment added to your plan.");});
+$("addTaskBtn").addEventListener("click",()=>{$("newTask").focus();toast("Enter the assignment details on the right.");});
+$("clearDone").addEventListener("click",()=>{tasks=tasks.filter(t=>!t.done);save();renderAll();toast("Completed tasks cleared.");});
+$("generatePlan").addEventListener("click",()=>{let name=$("studentName").value.trim();let level=$("level").value;let exam=$("examName").value.trim();let date=$("examDate").value;let hours=Number($("hours").value);let subjects=$("subjects").value.trim();if(name){$("profileName").textContent=name;$("studentName").value=name} $("profileGoal").textContent=level+(exam?" · "+exam:"");let list=subjects?subjects.split(/[;,\\n]+/).map(x=>x.trim()).filter(Boolean):["Maths practice","Science concepts","Language revision"];let count=Math.min(list.length,Math.max(2,hours));let mins=Math.floor(hours*60/count);let start=$("schoolEnd").value||"15:00";let [h,m]=start.split(":").map(Number);h+=1;let slots=[];for(let i=0;i<count;i++){let hh=h+Math.floor((m+i*(mins+10))/60),mm=(m+i*(mins+10))%60;let end=mins;slots.push({time:`${String(hh%12||12).padStart(2,"0")}:${String(mm).padStart(2,"0")} ${hh>=12?"PM":"AM"}`,title:list[i],sub:`Focused study · about ${mins} min`});}slots.push({time:"Final 15 min",title:"Recall, mistakes & tomorrow's plan",sub:"Check what you learned and note questions."});window.customSlots=slots;$("planSummary").textContent=`${hours} hour${hours>1?"s":""} daily · ${count} study blocks${date?" · exam "+new Date(date+"T12:00:00").toLocaleDateString():""}`;renderSchedule("plannerSchedule",true);if(exam&&date){let days=Math.ceil((new Date(date+"T00:00:00")-new Date(new Date().toDateString()))/86400000);toast(days>=0?`Plan created for ${exam} · ${days} days until exam.`:"Exam date is in the past—check your date.");}else toast("Your starter plan is ready. Adjust it as needed.");});
+$("saveProfile").addEventListener("click",()=>{if($("studentName").value.trim())$("profileName").textContent=$("studentName").value.trim();$("profileGoal").textContent=$("level").value;localStorage.setItem("sp_level",$("level").value);toast("Preferences saved in this browser.");});
+function renderQuiz(){answered=false;let q=questions[quizIndex];$("quizProgress").textContent=`Question ${quizIndex+1} of ${questions.length} · Sample practice`;$("quizArea").innerHTML=`<div class="quiz-q">${quizIndex+1}. ${q.q}</div><div class="answers">${q.opts.map((o,i)=>`<button class="answer" data-answer="${i}">${String.fromCharCode(65+i)}. ${o}</button>`).join("")}</div><div id="quizFeedback" class="feedback"></div><div class="actionrow"><button class="btn" id="nextQuestion" style="display:none">${quizIndex===questions.length-1?"Restart quiz":"Next question →"}</button></div>`;document.querySelectorAll("[data-answer]").forEach(b=>b.addEventListener("click",()=>{if(answered)return;answered=true;let choice=Number(b.dataset.answer),correct=choice===q.ans;quizAttempts++;if(correct)quizCorrect++;document.querySelectorAll("[data-answer]").forEach((x,i)=>{x.disabled=true;if(i===q.ans)x.classList.add("correct");if(i===choice&&!correct)x.classList.add("wrong")});$("quizFeedback").innerHTML=`<b style="color:${correct?'#21976f':'#c94c5a'}">${correct?'Correct! 🎉':'Not quite—keep learning.'}</b><br>${q.why}`;$("nextQuestion").style.display="inline-block";$("nextQuestion").addEventListener("click",()=>{quizIndex=(quizIndex+1)%questions.length;renderQuiz();renderStats()});}));}
+$("sendChat").addEventListener("click",sendMessage);$("chatInput").addEventListener("keydown",e=>{if(e.key==="Enter")sendMessage()});
+document.querySelectorAll(".prompt").forEach(b=>b.addEventListener("click",()=>{$("chatInput").value=b.dataset.prompt;sendMessage()}));
+function sendMessage(){let input=$("chatInput"),msg=input.value.trim();if(!msg)return;addBubble(msg,"user");input.value="";let low=msg.toLowerCase();let answer;if(/backlog|overwhelm|behind|give up|motivat/.test(low))answer="Let's make this manageable. 🌱 First, list only the unfinished tasks. Pick the most urgent one or the smallest one, and work for 15 minutes. Move anything non-urgent to a catch-up slot—don't try to do everything tonight. Which subject feels most difficult right now?";else if(/plan|timetable|schedule|exam date|revision/.test(low))answer="Let's build a realistic plan. Tell me: (1) your exam date, (2) subjects and chapters, (3) how much time you have after school, and (4) which topics feel hardest. We'll split your time between learning, question practice, spaced revision, breaks, and a catch-up buffer. You can also use the Smart planner tab.";else if(/atom|electron|proton|neutron|molecule|science|math|equation|homework|explain|question/.test(low))answer="Let's work through it step by step. First, tell me your class and the exact question or chapter. I'll aim to explain the idea in simple language, show a worked example, then give you one short question to check your understanding. This demo tutor is not connected to a live AI model yet, so its replies are general prompts rather than generated subject-specific solutions.";else answer="I'm here to help you make progress. 🙂 Tell me your class, subject, and the exact concept or assignment you're working on. We can break it into smaller steps, plan practice, and identify what to revise. Note: this demo does not yet use a live AI service.";setTimeout(()=>addBubble(answer,"ai"),180)}
+function addBubble(text,who){let box=$("chatbox"),div=document.createElement("div");div.className="bubble "+who;div.textContent=text;box.appendChild(div);box.scrollTop=box.scrollHeight}
+const today=new Date();$("eyebrow").textContent=today.toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric"}).toUpperCase();$("todayPill").textContent="📅 "+today.toLocaleDateString(undefined,{weekday:"short",day:"numeric",month:"short"});
+$("taskDue").value=today.toISOString().slice(0,10);renderAll();renderQuiz();
+
+// Final prototype enhancements: focus timer, theme preference, and saved profile preferences.
+let focusMinutes = 25, focusSeconds = focusMinutes * 60, focusInterval = null, focusRunning = false;
+const focusModal = $("focusModal");
+function drawTimer(){
+  const mm = Math.floor(focusSeconds / 60), ss = focusSeconds % 60;
+  $("timerDisplay").textContent = `${String(mm).padStart(2,"0")}:${String(ss).padStart(2,"0")}`;
+  $("timerStart").textContent = focusRunning ? "Pause focus" : (focusSeconds === 0 ? "Start again" : "Start focus");
+}
+function stopTimer(){ if(focusInterval){clearInterval(focusInterval);focusInterval=null;} focusRunning=false; }
+function openFocus(){focusModal.hidden=false;drawTimer();$("focusTask").focus();}
+function closeFocus(){focusModal.hidden=true;}
+$("focusBtn").addEventListener("click",openFocus);
+$("closeFocus").addEventListener("click",closeFocus);
+focusModal.addEventListener("click",e=>{if(e.target===focusModal)closeFocus();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!focusModal.hidden)closeFocus();});
+document.querySelectorAll("[data-minutes]").forEach(b=>b.addEventListener("click",()=>{
+  stopTimer();focusMinutes=Number(b.dataset.minutes);focusSeconds=focusMinutes*60;
+  document.querySelectorAll("[data-minutes]").forEach(x=>x.classList.toggle("active",x===b));drawTimer();
+}));
+$("timerStart").addEventListener("click",()=>{
+  if(focusRunning){stopTimer();drawTimer();return;}
+  if(focusSeconds<=0)focusSeconds=focusMinutes*60;
+  focusRunning=true;drawTimer();
+  focusInterval=setInterval(()=>{
+    focusSeconds=Math.max(0,focusSeconds-1);drawTimer();
+    if(focusSeconds===0){
+      stopTimer();drawTimer();
+      const label=$("focusTask").value.trim();
+      $("timerNote").textContent="Sprint complete! Take a short break and celebrate showing up. 🌱";
+      toast("Focus sprint complete! Great work. 🎉");
+      try{let total=Number(localStorage.getItem("sp_focus_minutes")||0)+focusMinutes;localStorage.setItem("sp_focus_minutes",String(total));$("studyTime").textContent=`${Math.floor(total/60)}h ${total%60}m`;}catch(e){}
+      if(label) $("timerNote").textContent=`You showed up for: ${label}. Take a short break before your next sprint.`;
+    }
+  },1000);
+});
+$("timerReset").addEventListener("click",()=>{stopTimer();focusSeconds=focusMinutes*60;$("timerNote").textContent="Tip: keep your goal small enough to start right now.";drawTimer();});
+try{
+  const savedTheme=localStorage.getItem("sp_theme");
+  if(savedTheme==="dark")document.body.classList.add("dark");
+  $("themeBtn").textContent=document.body.classList.contains("dark")?"☀":"☾";
+  const savedName=localStorage.getItem("sp_name");
+  const savedLevel=localStorage.getItem("sp_level");
+  if(savedName){$("studentName").value=savedName;$("profileName").textContent=savedName;}
+  if(savedLevel){$("level").value=savedLevel;$("profileGoal").textContent=savedLevel;}
+  const mins=Number(localStorage.getItem("sp_focus_minutes")||0);
+  if(mins>0)$("studyTime").textContent=`${Math.floor(mins/60)}h ${mins%60}m`;
+}catch(e){}
+$("themeBtn").addEventListener("click",()=>{
+  document.body.classList.toggle("dark");
+  const dark=document.body.classList.contains("dark");
+  $("themeBtn").textContent=dark?"☀":"☾";
+  try{localStorage.setItem("sp_theme",dark?"dark":"light");}catch(e){}
+  toast(dark?"Dark mode enabled.":"Light mode enabled.");
+});
+const originalSaveProfile=$("saveProfile").onclick;
+$("saveProfile").addEventListener("click",()=>{
+  try{
+    if($("studentName").value.trim())localStorage.setItem("sp_name",$("studentName").value.trim());
+    localStorage.setItem("sp_level",$("level").value);
+  }catch(e){}
+});
+
+</script>
+</body>
+</html>
